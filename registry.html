@@ -5,13 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自分のクラスを登録</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            padding: 10px;
+        }
         iframe {
             width: 100%;
             height: 90vh;
         }
+
+        input {
+            font-family: inherit;
+            font-size: inherit;
+            border-radius: .25rem;
+            border: 1px solid #707070;
+            outline: none;
+            padding: 0.375em 0.75em;
+            margin-top: 5px;
+        }
+
+        input:focus {
+            border-color: rgba(var(--color_rgb), .5);
+            box-shadow: 0 0 3px 1px rgba(var(--color_rgb), .5);
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            accent-color: var(--color);
+        }
+        input[type="radio"] {
+            margin-top: 20px;
+            margin-right: 10px;
+            transform: scale(1.5);
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+        }
+        .required_symbol {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        form div {
+            margin: 0 0 15px 0;
+        }
+        button {
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            appearance: none;
+            width: 60%;
+            margin-top: 10px;
+            margin-left: 20%;
+            border-radius: 5px;
+            padding: 10px;
+            background: #535fc1;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdJ-h2cWHOpZbFyxGf_9hF9LKbzHr8PKLp3-LPsu7w1VmkZQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScdJ-h2cWHOpZbFyxGf_9hF9LKbzHr8PKLp3-LPsu7w1VmkZQ/formResponse" onsubmit="submitted=true;" target="hidden_iframe">
+        <h2>自分のクラスを登録</h2>
+        <div>
+            <label>
+                現在の学籍番号(5桁)(10〇〇〇)
+                <span class="required_symbol">*</span>
+            </label><br>
+            <input type="number" name="entry.959951496" required>
+        </div>
+        <hr>
+        <div>
+            <label>名前(任意)</label><br>
+            <input type="text" name="entry.1206896293" required>
+        </div>
+        <hr>
+        <div>
+            <label>
+                次年度のクラス
+                <span class="required_symbol">*</span>
+            </label><br>
+            <div>
+                <input type="radio" name="entry.1623613973" id="class1" value="1組" required><label for="class1">1組</label><br>
+                <input type="radio" name="entry.1623613973" id="class2" value="2組"><label for="class2">2組</label><br>
+                <input type="radio" name="entry.1623613973" id="class3" value="3組"><label for="class3">3組</label><br>
+                <input type="radio" name="entry.1623613973" id="class4" value="4組"><label for="class4">4組</label><br>
+                <input type="radio" name="entry.1623613973" id="class5" value="5組"><label for="class5">5組</label><br>
+                <input type="radio" name="entry.1623613973" id="class6" value="6組"><label for="class6">6組</label><br>
+                <input type="radio" name="entry.1623613973" id="class7" value="7組"><label for="class7">7組</label><br>
+                <input type="radio" name="entry.1623613973" id="class8" value="8組"><label for="class8">8組</label><br>
+                <input type="radio" name="entry.1623613973" id="class9" value="9組"><label for="class9">9組</label>
+            </div>
+        </div>
+        <button type="submit">送信</button>
+    </form>
+    <iframe
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style="display: none"
+        onload="if(submitted){window.location='./index.html';}"
+    ></iframe>
 </body>
 </html>
