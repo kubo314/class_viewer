@@ -16,6 +16,7 @@
             background-color: #888fff;
             color: #fff;
             text-decoration: none;
+            cursor: pointer;
         }
         a {
             text-decoration: none;
@@ -45,11 +46,38 @@
         </div>
     </a>
     <br>
-    <a href="./view.html">
-        <div class="button">
-            クラスを見る
-        </div>
-    </a>
-    
+    <div class="view_class button">
+        クラスを見る
+    </div>
+    <script>
+        const random_str = () => {
+            // 使いたい文字のセット（例：英大文字・英小文字・数字）
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
+            // 作りたい文字列の長さ
+            const length = 10
+
+            // 空の文字列（結果を入れる箱）を用意
+            let newPassword = ''
+
+            // length 回くり返す
+            for (let i = 0; i < length; i++) {
+            // 0〜(charsの長さ-1) の範囲でランダムな整数を作る
+            const randomIndex = Math.floor(Math.random() * chars.length)
+
+            // chars からランダムな1文字を取り出す
+            const randomChar = chars[randomIndex]
+
+            // 取り出した文字を newPassword に追加する
+            newPassword += randomChar
+            }
+
+            // 完成したランダム文字列を出力
+            return newPassword;
+        }
+        document.querySelector(".view_class").addEventListener("click", () => {
+            window.location =  `./view.html?aaa=${random_str()}`;
+        });
+    </script>
     </body>
 </html>
