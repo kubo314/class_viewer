@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>クラスを見る</title>
     <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            flex-flow: column;
+        }
         iframe {
             width: 100%;
-            height: 90vh;
+            flex-grow: 1;
+            border: none;
         }
     </style>
 </head>
@@ -41,7 +51,7 @@
             return newPassword;
         }
         document.addEventListener("DOMContentLoaded", () => {
-            const iframe_url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vR11Jycq9kd-iIavUJGfgBoOjOqDGILEj9xjoWCf76ZwMGAHfbuZnZXa5gTN79jPGgVRIraeBEpzqHb/pubhtml?gid=2034530353&amp;single=true&amp;widget=true&amp;headers=false&aaaa=${random_str()}`;
+            const iframe_url = `https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vR11Jycq9kd-iIavUJGfgBoOjOqDGILEj9xjoWCf76ZwMGAHfbuZnZXa5gTN79jPGgVRIraeBEpzqHb/pubhtml/sheet?headers=false&gid=2034530353&aaaa=${random_str()}`;
             document.querySelector("iframe").setAttribute("src", iframe_url);
         });
     </script>
